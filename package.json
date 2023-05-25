@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prisma:dev:deploy": "prisma migrate deploy",
+    "db:dev:rm": "docker compose rm dev-db -s -f -v",
+    "db:dev:up": "docker compose up dev-db -d",
+    "db:dev:restart": "npm run db:dev:rm && npm run db:dev:up && sleep 1 && npm run prisma:dev:deploy",
+    "start": "node index.js",
+    "server": "nodemon index.js --ignore tests",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prisma": "^4.14.1"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.14.1",
+    "axios": "^1.4.0",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "jest": "^29.5.0",
+    "jsonwebtoken": "^9.0.0",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
+  }
+}
