@@ -10,7 +10,8 @@
     "db:dev:restart": "npm run db:dev:rm && npm run db:dev:up && sleep 1 && npm run prisma:dev:deploy",
     "start": "node index.js",
     "server": "nodemon index.js --ignore tests",
-    "test": "jest"
+    "test": "jest",
+    "build": "echo 'No build step required for Express API deployment.'"
   },
   "keywords": [],
   "author": "",
