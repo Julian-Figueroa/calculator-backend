@@ -1,4 +1,5 @@
 const { PrismaClient } = require('@prisma/client');
+const operationCosts = require('../utils/constants');
 
 const prisma = new PrismaClient({
   datasources: {
@@ -9,15 +10,6 @@ const prisma = new PrismaClient({
 });
 
 // Calculate cost for each operation
-const operationCosts = {
-  addition: 1,
-  subtraction: 1,
-  multiplication: 2,
-  division: 2,
-  square_root: 3,
-  random_string: 1,
-};
-
 module.exports = async (req, res, next) => {
   const userId = req.body.user_id;
 

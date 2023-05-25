@@ -5,6 +5,8 @@
 Note: The Postgres DB must be up and running on the proper Docker container
 
 ```bash
+cp .env.sample .env
+# fill out the missing env variables if needed
 npm install
 npm run server
 ```
@@ -177,7 +179,6 @@ Retrieve records for a specific user.
 | `page`    | Number | No       | 1       | The page number of records to retrieve                              |
 | `perPage` | Number | No       | 10      | The number of records to retrieve per page                          |
 | `sort`    | String | No       | 'asc'   | The sorting order of the records. Possible values: 'asc' or 'desc'  |
-| `filter`  | String | No       | ''      | Filter records based on amount, user balance, or operation response |
 
 ### Response
 

@@ -16,8 +16,7 @@ module.exports = (app) => {
   // @access Private
   app.get('/user/:userId/records', auth, async (req, res) => {
     const { userId } = req.params;
-    console.log({ userId });
-    const { page = 1, perPage = 10, sort = 'asc', filter = '' } = req.query;
+    const { page = 1, perPage = 10, sort = 'asc' } = req.query;
 
     if (!userId) {
       return res.status(400).json({ error: 'userId is needed' });
@@ -27,11 +26,6 @@ module.exports = (app) => {
       const records = await prisma.record.findMany({
         where: {
           user_id: parseInt(userId),
-          OR: [
-            { amount: { equals: parseFloat(filter) } },
-            { user_balance: { equals: parseFloat(filter) } },
-            { operation_response: { equals: parseFloat(filter) } },
-          ],
         },
         orderBy: { id: sort.toLowerCase() },
         skip: (page - 1) * perPage,
