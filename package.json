@@ -11,7 +11,7 @@
     "start": "node index.js",
     "server": "nodemon index.js --ignore tests",
     "test": "jest",
-    "build": "echo 'No build step required for Express API deployment.'"
+    "build": "prisma generate && next build"
   },
   "keywords": [],
   "author": "",
