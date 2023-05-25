@@ -1,6 +1,9 @@
 const { PrismaClient } = require('@prisma/client');
 const operationCosts = require('../utils/constants');
 
+const dotenv = require('dotenv');
+dotenv.config();
+
 const prisma = new PrismaClient({
   datasources: {
     db: {
