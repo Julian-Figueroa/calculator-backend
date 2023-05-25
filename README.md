@@ -1,12 +1,5 @@
 # Arithmetic Calculator REST API
 
-## TODO
-
-- Add User Records endpoints
-- Add Unit Testing
-- Add API documentation
-- Deploy using Vercel
-
 ## Development
 
 Note: The Postgres DB must be up and running on the proper Docker container
