@@ -14,10 +14,5 @@
   ],
   "env": {
     "PRISMA_FORCE_NAPI": "true"
-  },
-  "build": {
-    "postbuild": {
-      "commands": ["npm install -g prisma", "prisma generate", "prisma migrate deploy"]
-    }
   }
 }
