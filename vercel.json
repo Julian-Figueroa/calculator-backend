@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.js"
+    }
+  ],
+  "env": {
+    "PRISMA_FORCE_NAPI": "true"
+  },
+  "build": {
+    "postbuild": {
+      "commands": ["npm install -g prisma", "prisma generate", "prisma migrate deploy"]
+    }
+  }
+}
