@@ -11,7 +11,7 @@
     "start": "node index.js",
     "server": "nodemon index.js --ignore tests",
     "test": "jest",
-    "build": "prisma generate"
+    "build": "prisma generate && npm run prisma:dev:deploy"
   },
   "keywords": [],
   "author": "",
